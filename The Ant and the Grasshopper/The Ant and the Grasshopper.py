@@ -38,7 +38,6 @@ number = 0
 
 while number < 1 or number > 1000:
     number = int(input())
-    print('Insira a quantidade de casos entre 1 e 1000 (número inteiro)')
 
 number2 = number
 number3 = 0
@@ -62,8 +61,6 @@ while(number>0):
             counter = counter + 1
         if j > 0 and j <= 100:
             counter = counter + 1
-        if counter!=3:
-            print('Insira 3 numeros de acordo com os limites: [1-100] [0-1000] [0-100]')
     number3 = number3 + 1
     arrayduplo.append(put)
 
