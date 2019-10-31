@@ -14,6 +14,19 @@ def dividir_familias (matriz):
 	return arr_F0, arr_F1
 
 
+def matriz():
+	# colocar em linhas separadas do input numa lista
+	f = open("input.txt", "r")
+	a = f.readlines()
+	matriz = []
+
+	for i in a:
+		matriz.append(i.split())
+	matriz.pop(0)
+	f.close()
+	#Teste : print (matriz)
+	return matriz
+
 
 matriz = matriz()
 arr_F0, arr_F1 = dividir_familias(matriz)
