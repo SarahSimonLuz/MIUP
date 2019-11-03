@@ -27,6 +27,21 @@ def matriz():
 	#Teste : print (matriz)
 	return matriz
 
+def menor(arr_F0, arr_F1):
+	#Descobrir a menor distacia entre as duas familias
+	m = 1000000000
+	for i in arr_F0:
+		x1 = i[0]
+		y1 = i[1]
+		for i in arr_F1:
+			x2 = i[0]
+			y2 = i[1]
+			m1 = abs(x1-x2)+abs(y1-y2)
+			if(m1 < m):
+				m = m1
+
+	return m
+
 
 matriz = matriz()
 arr_F0, arr_F1 = dividir_familias(matriz)
