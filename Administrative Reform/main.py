@@ -30,6 +30,41 @@ def to_int(matriz, line1, line2):
 	#Teste : print(matriz, line1, line2) 
 	return matriz, line1, line2
 
+def estradas(matriz, X, Y, C):
+	#Descobrir para cada capital o numero de comunidades
+	n1 = 0
+	n2 = 0
+	n3 = 0
+	for c in range(C):
+		#Teste : print (c)
+		l1 = 0
+		l2 = 0
+		if c == X:
+			n1 = n1 + 1
+		elif c == Y:
+			n2 = n2 + 1	
+		else:
+			for i in matriz:
+				if(i[0] == c and i[1] == X) or (i[0] == X and i[1] == c):
+					l1 = i[2]
+					#Teste : print(l1)
+				elif(i[0] == c and i[1] == Y) or (i[0] == Y and i[1] == c):
+					l2 = i[2]
+					#Teste : print (l2)
+			
+			if l1 < l2 and l1 != 0:
+				n1 = n1 + 1
+			elif l2 < l1 and l2 != 0:
+				n2 = n2 + 1
+			elif l1 == l2:
+				n3 = n3 + 1
+			elif l2 == 0 and l1 != 0:
+				n1 = n1 + 1
+			elif l1 == 0 and l2 != 0:
+				n2 = n2 + 1
+		#Teste : print(n1, n2, n3)
+
+	return n1, n2, n3
 
 matriz, line1, line2 = matriz()
 matriz, line1, line2 = to_int(matriz, line1, line2)
