@@ -1,5 +1,20 @@
 #Exercicio 4
 
+def matriz():
+	# colocar em linhas separadas do input numa lista
+	f = open("input2.txt", "r")
+	a = f.readlines()
+	matriz = []
+
+	for i in a:
+		matriz.append(i.split())
+	line1 = matriz.pop(0)
+	line2 = matriz.pop(len(matriz)-1)
+	f.close()
+
+	#Teste: print (matriz, line1, line2)
+	return matriz, line1, line2 
+
 
 matriz, line1, line2 = matriz()
 matriz, line1, line2 = to_int(matriz, line1, line2)
