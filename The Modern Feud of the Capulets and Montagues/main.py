@@ -1,5 +1,20 @@
 #Exercicio 4
 
+
+def to_int(arr_F0,arr_F1):
+	#Passar as strings das listas da familia em ints
+	for i in arr_F0:
+		i[1] = int(i[1]) 
+		i[2] = int(i[2]) 
+		i[0] = int(i[0]) 
+	for i in arr_F1:
+		i[1] = int(i[1]) 
+		i[2] = int(i[2]) 
+		i[0] = int(i[0])
+	#Teste : print(arr_F0) 
+	#Teste : print(arr_F1)
+	return arr_F0, arr_F1
+
 def dividir_familias (matriz):
 	#dividir a lista matriz por familias 
 	arr_F0 = []
@@ -14,9 +29,9 @@ def dividir_familias (matriz):
 	return arr_F0, arr_F1
 
 
-def matriz():
+def matrizes(file_name):
 	# colocar em linhas separadas do input numa lista
-	f = open("input.txt", "r")
+	f = open(file_name, "r")
 	a = f.readlines()
 	matriz = []
 
@@ -42,9 +57,12 @@ def menor(arr_F0, arr_F1):
 
 	return m
 
+def main1(file_name):
+	matriz = matrizes(file_name)
+	arr_F0, arr_F1 = dividir_familias(matriz)
+	arr_F0, arr_F1 = to_int(arr_F0,arr_F1)
+	m = menor(arr_F0, arr_F1)
+	print (m)
+	return m
 
-matriz = matriz()
-arr_F0, arr_F1 = dividir_familias(matriz)
-arr_F0, arr_F1 = to_int(arr_F0,arr_F1)
-m = menor(arr_F0, arr_F1)
-print(m)
+
