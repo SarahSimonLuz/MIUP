@@ -27,6 +27,20 @@ def matriz():
 	#Teste : print (matriz)
 	return matriz
 
+def to_int(arr_F0,arr_F1):
+	#Passar as strings das listas da familia em ints
+	for i in arr_F0:
+		i[1] = int(i[1]) 
+		i[2] = int(i[2]) 
+		i[0] = int(i[0]) 
+	for i in arr_F1:
+		i[1] = int(i[1]) 
+		i[2] = int(i[2]) 
+		i[0] = int(i[0])
+	#Teste : print(arr_F0) 
+	#Teste : print(arr_F1)
+	return arr_F0, arr_F1
+
 def menor(arr_F0, arr_F1):
 	#Descobrir a menor distacia entre as duas familias
 	m = 1000000000
