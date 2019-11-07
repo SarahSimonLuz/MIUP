@@ -39,6 +39,8 @@ def menos_votos(n_partidos):
 def algoritmo(idx):
 	global dados_partidos
 	alg = dados_partidos[idx][0] / (dados_partidos[idx][1] + 1 )
+	print("algoritmo")
+	print(alg)
 	return alg
 
 
@@ -127,6 +129,8 @@ def ciclo(n_partidos):
 		n_lugares = n_lugares - 1
 		
 	output()
+	n_lugares = 0
+	return n_lugares
 
 
 
