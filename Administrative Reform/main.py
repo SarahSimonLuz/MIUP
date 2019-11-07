@@ -1,8 +1,8 @@
-#Exercicio 4
+#Exercicio 5
 
-def matriz():
+def matrizes(file_name):
 	# colocar em linhas separadas do input numa lista
-	f = open("input2.txt", "r")
+	f = open(file_name, "r")
 	a = f.readlines()
 	matriz = []
 
@@ -66,10 +66,12 @@ def estradas(matriz, X, Y, C):
 
 	return n1, n2, n3
 
-matriz, line1, line2 = matriz()
-matriz, line1, line2 = to_int(matriz, line1, line2)
-C = line1[0]
-X = line2[0]
-Y = line2[1]
-n1, n2, n3 = estradas(matriz, X, Y, C)
-print(n1, n2, n3)
+def main1(file_name):
+	matriz, line1, line2 = matrizes(file_name)
+	matriz, line1, line2 = to_int(matriz, line1, line2)
+	C = line1[0]
+	X = line2[0]
+	Y = line2[1]
+	n1, n2, n3 = estradas(matriz, X, Y, C)
+	print(n1, n2, n3)
+	return n1, n2, n3
