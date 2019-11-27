@@ -1,3 +1,31 @@
+def possivel(a,x,y,c,l):
+        count = 0
+        if x != 0:
+                if y != 0:
+                        if a[x-1][y-1]=='#':
+                                count+=1
+                if y != c:
+                        if a[x-1][y+1]=='#':
+                                count+=1
+                if y == 0 or y == c:
+                        count+=1
+        if x != l:
+                if y != 0:
+                        if a[x+1][y-1]=='#':
+                                count+=1
+                if y != c:
+                        
+                        if a[x+1][y+1]=='#':
+                                count+=1
+                if y == 0 or y == c:
+                        count+=1
+        if x == 0 or x == l:
+                
+                        count+=1                        
+        if count <= 2:
+                return True
+        return False
+
 
 def rock(x):
         import filecmp
