@@ -1,8 +1,8 @@
 import unittest
-from Rock import possivel
-from Rock import count
-from Rock import rock
-from Rock import matriz
+from RockMeNot import possivel
+from RockMeNot import count
+from RockMeNot import rock
+from RockMeNot import matriz
 
 class Testrock(unittest.TestCase):
         
