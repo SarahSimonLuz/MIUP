@@ -16,10 +16,7 @@ class Testrock(unittest.TestCase):
 
         def test_count(self):
                 self.assertEqual(count((['.','.','.'],['.','.','.'],['.','.','.']),3,3),5)
-                self.assertEqual(
-
-
-                        count((['.','.'],['.','#']),2,2),1)
+                self.assertEqual(count((['.','.'],['.','#']),2,2),1)
 
         def test_matriz(self):
                 self.assertEqual(matriz(['3 3\n', '...\n', '...\n', '...']),([['.', '.', '.'], ['.', '.', '.'], ['.', '.', '.']], 3, 3))

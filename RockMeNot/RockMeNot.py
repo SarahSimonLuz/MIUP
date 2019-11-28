@@ -27,6 +27,44 @@ def possivel(a,x,y,c,l):
         return False
 
 
+
+def count(a,c,l):
+        c1=c-1
+        l1=l-1
+        valor=0
+        for i in range(l):
+                for j in range(c):
+                        if a[i][j] != '#':
+                                num = possivel(a,i,j,c1,l1)
+                                if num == True:
+                                        a[i][j] = '#'
+                                        valor+=1
+        return valor
+
+
+def matriz(a):
+        
+        txt = a[0]
+        txt = txt.replace("\n","")
+        txt = txt.split()
+        c = int(txt[0])
+        l = int(txt[1])
+
+        d = [[0 for x in range(c)] for y in range(l)]
+
+        for i in range(l+1):
+                if i>=1:
+                        intime = a[i]
+                        intime = intime.replace("\n","")
+                        for j in range(c):
+                                i-=1
+                                d[i][j] = intime[j:j+1]
+                                i+=1
+        return d,c,l
+
+
+
+
 def rock(x):
         import filecmp
         
