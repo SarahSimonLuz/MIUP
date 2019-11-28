@@ -1,6 +1,19 @@
 import sys
 import string
 
+def print_camadas(max_linhas, camadas):
+	i = 0
+	print("Camadas:")
+	while i<max_linhas:
+		j = 0
+		for j in range(max_linhas):
+			print(camadas[i][j]),
+			j = j+1
+
+		i = i+1
+		print("\n")
+
+
 def mover_bolas(camadas, max_linhas, n_camadas, l, c, primeiro):
 	if l >= max_linhas-n_camadas or l == -1:
 		return
