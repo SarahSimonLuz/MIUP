@@ -1,7 +1,6 @@
 import sys
 import string
 
-<<<<<<< HEAD
 def criar_camadas(max_linhas, n_camadas):
 	n_bolas_in = 0
 	max_peso = 0
@@ -56,7 +55,7 @@ def criar_camadas(max_linhas, n_camadas):
 #
 #		i = i+1
 #		print("\n")
-=======
+
 def print_camadas(max_linhas, camadas):
 	i = 0
 	print("Camadas:")
@@ -68,7 +67,6 @@ def print_camadas(max_linhas, camadas):
 
 		i = i+1
 		print("\n")
->>>>>>> e4fa66b6301b6501e2c468de94fbb322a5011ea0
 
 
 def mover_bolas(camadas, max_linhas, n_camadas, l, c, primeiro):
@@ -106,65 +104,17 @@ def mover_bolas(camadas, max_linhas, n_camadas, l, c, primeiro):
 
 	mover_bolas(camadas, max_linhas, n_camadas, l_aux, c_aux, primeiro+1)
 
-<<<<<<< HEAD
 
 
 n = 0
 n_bolas_out = 0
-=======
-n = 0
-n_bolas_out = 0
-n_bolas_in = 0
-max_peso = 0
->>>>>>> e4fa66b6301b6501e2c468de94fbb322a5011ea0
 
 n_camadas = input()
 max_linhas = (n_camadas *(n_camadas + 1))/2
 
-<<<<<<< HEAD
 camadas = [[-1]*max_linhas for _ in range(max_linhas)]
 
 camadas, n_bolas_in = criar_camadas(max_linhas, n_camadas)
-=======
-i = 1
-linha = 0
-
-camadas = [[-1]*max_linhas for _ in range(max_linhas)]
-
-while i<=n_camadas:
-	j = 1
-
-	while j<=i:
-		k = 1
-
-		while k<=j:
-			n = raw_input()
-
-			if len(str(n)) > 1:
-				n = n.split(" ")
-				tamanho = len(n)
-				max_n = max(n)
-				max_peso = max(max_peso, max_n)
-
-				aux = 0
-				while aux<tamanho:
-					camadas[linha][aux] = int(n[aux])
-					aux = aux + 1
-
-				n_bolas_in = n_bolas_in + tamanho
-				k = k +tamanho
-
-			else:
-				max_peso = max(max_peso, n)
-				n_bolas_in = n_bolas_in + 1
-				k = k +1
-				camadas[linha][0] = int(n)
-
-			linha = linha + 1
-		j = j + 1
-	i = i +1
-
->>>>>>> e4fa66b6301b6501e2c468de94fbb322a5011ea0
 
 while n_bolas_out != n_bolas_in:
 	print(camadas[0][0])
