@@ -27,6 +27,22 @@ def possivel(a,x,y,c,l):
         return False
 
 
+
+def count(a,c,l):
+        c1=c-1
+        l1=l-1
+        valor=0
+        for i in range(l):
+                for j in range(c):
+                        if a[i][j] != '#':
+                                num = possivel(a,i,j,c1,l1)
+                                if num == True:
+                                        a[i][j] = '#'
+                                        valor+=1
+        return valor
+
+
+
 def rock(x):
         import filecmp
         
