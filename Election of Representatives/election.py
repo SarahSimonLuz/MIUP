@@ -127,6 +127,8 @@ def ciclo(n_partidos):
 		n_lugares = n_lugares - 1
 		
 	output()
+	n_lugares = 0
+	return n_lugares
 
 
 

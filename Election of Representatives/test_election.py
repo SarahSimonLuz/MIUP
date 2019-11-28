@@ -7,6 +7,7 @@ from election import algoritmo
 from election import empate_votos
 from election import empate_cotacao
 from election import output
+from election import ciclo
 
 class ElectionTests(unittest.TestCase):
 
@@ -43,3 +44,8 @@ class ElectionTests(unittest.TestCase):
 		output()
 		sys.stdout = sys.__stdout__
 		print(capturedOutput.getvalue())
+
+	def test_ciclo(self):
+		n_partidos = 4
+		rslt_ciclo = ciclo(n_partidos)
+		self.assertEqual(0, rslt_ciclo)
