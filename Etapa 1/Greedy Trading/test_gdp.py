@@ -1,5 +1,4 @@
 import unittest
-import StringIO
 import sys
 from gdp import mediana
 from gdp import output
@@ -39,5 +38,8 @@ class TestGdp(unittest.TestCase):
 
         
 
-    
+ 
+if __name__=='__main__':
+        unittest.main()
+   
 
