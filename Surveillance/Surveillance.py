@@ -18,6 +18,10 @@ def recebecalcula(pontos,size):
         y = np.append(y, pontos[(i*2)+3])
     return PolyArea(x,y)
 
+def PolyArea(x,y):
+    import numpy as np
+    return 0.5*np.abs(np.dot(x,np.roll(y,1))-np.dot(y,np.roll(x,1)))
+
 def verifica(x):
     if x[0]<0 or x[0]>1 or x[1]<0 or x[1]>1:
         return False
