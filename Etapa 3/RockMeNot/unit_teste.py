@@ -44,9 +44,9 @@ class Testrock(unittest.TestCase):
                         self.assertEqual(count(*x), e)
 
         def test_matriz(self):
-                for (x, e) in self.matriz_cases:
-                        self.assertEqual(matriz(*x), e)
-                #self.assertEqual(matriz(['3 3\n', '...\n', '...\n', '...']),([['.', '.', '.'], ['.', '.', '.'], ['.', '.', '.']], 3, 3))
+                #for (x, e) in self.matriz_cases:
+                        #self.assertEqual(matriz(*x), e)
+                self.assertEqual(matriz(['3 3\n', '...\n', '...\n', '...']),([['.', '.', '.'], ['.', '.', '.'], ['.', '.', '.']], 3, 3))
 
 if __name__=='__main__':
         unittest.main()
