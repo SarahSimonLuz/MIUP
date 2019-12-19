@@ -13,6 +13,12 @@ def divisao(equipas): #dividir o input em equipas separadas
 		ret.append(aux)
 	return ret
 
+def verificar_abertos(dia, equipas,abertos): #as equipas que é possivel mandar emails
+	for i in equipas:
+		if dia == i[1]:
+			abertos.append(i)
+	return abertos
+
 def verificar_data(dia,equipas): #ver se a equipa com o deadline+prox já está "preparada" para receber emails
 	if len(equipas)==0:
 		return 0
