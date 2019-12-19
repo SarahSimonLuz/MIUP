@@ -3,6 +3,16 @@ def leitura(nome_ficheiro): #leitura do input
     escolhas = f.read().splitlines()
     return escolhas 
 
+def divisao(equipas): #dividir o input em equipas separadas
+	ret = []
+	aux = []
+	for i in equipas:
+		aux = i.split(' ')
+		for j in range(len(aux)):
+			aux[j] = int(aux[j])
+		ret.append(aux)
+	return ret
+
 def decrementar(equipas): #decrementa o numero de emails por mandar, e remove da lista
 	for i in equipas:
 		i[0]-=1
