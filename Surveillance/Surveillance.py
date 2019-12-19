@@ -62,7 +62,17 @@ def calcula_areaponto(pontos,pontos2,size):
             areaponto = [i]
     return areaponto
 
-
+def calcula_pontofinal(pontos2, areaponto):
+    savedistance = calcula_save_distance(pontos2, areaponto)
+    checkx = 0
+    countdistance = 0
+    if len(savedistance)>1:
+        for r in savedistance:
+            sx, sy = pontos2[areaponto[savedistance[countdistance]]]
+            if checkx>sx:
+                checkx=countdistance
+            countdistance+=1
+    return pontos2[areaponto[savedistance[checkx]]]
 
 def arrayduplo(pontos):
     pontos2 = []
