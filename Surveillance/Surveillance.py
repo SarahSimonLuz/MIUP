@@ -8,6 +8,20 @@
 #pontos=[[0,0],[1,0],[1,1],[0,1]]
 #pontos2=[[0,0],[1,0],[1,1],[0,1],[0,0],[1,0],[1,1],[0,1]]
 
+def matrizes(file_name):
+    # colocar em linhas separadas do input numa lista
+    f = open(file_name, "r")
+    a = f.readlines()
+    matriz = []
+    for i in a:
+        matriz.append(i.split())
+    size1 = matriz.pop(0)
+    size = int(size1[0])
+    for i in matriz:
+        i[1] = int(i[1]) 
+        i[0] = int(i[0]) 
+    f.close()
+    return matriz,size
 
 def recebecalcula(pontos,size):
     import numpy as np
