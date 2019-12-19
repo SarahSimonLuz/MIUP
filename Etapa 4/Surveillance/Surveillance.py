@@ -76,6 +76,19 @@ def calcula_areaponto(pontos,pontos2,size):
             areaponto = [i]
     return areaponto
 
+def calcula_save_distance(pontos2, areaponto):
+    import numpy as np
+    
+    distancebase = np.linalg.norm(np.array((0,0))-np.array(pontos2[areaponto[0]]))
+    savedistance = []
+    for d in range(len(areaponto)):
+        distance = np.linalg.norm(np.array((0,0))-np.array(pontos2[areaponto[d]]))
+        if distance==distancebase:
+            savedistance.append(d)
+        if distance<distancebase:
+            savedistance=[d]
+    return savedistance
+
 def calcula_pontofinal(pontos2, areaponto):
     savedistance = calcula_save_distance(pontos2, areaponto)
     checkx = 0
