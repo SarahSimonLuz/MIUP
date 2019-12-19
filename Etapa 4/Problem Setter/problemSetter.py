@@ -13,6 +13,18 @@ def divisao(equipas): #dividir o input em equipas separadas
 		ret.append(aux)
 	return ret
 
+def ordenar(equipas): #ordenar as equipas pelo inicio dos intervalos de separacao, usando insertionsort
+	for i in range(1, len(equipas)):
+		chave = equipas[i][1]
+		chave_inteira = equipas[i]
+		j = i-1
+		while j>= 0 and chave< equipas[j][1]:
+			equipas[j+1] = equipas[j]
+			j-=1
+		equipas[j+1] = chave_inteira
+
+	return equipas 
+
 def verificar_abertos(dia, equipas,abertos): #as equipas que é possivel mandar emails
 	for i in equipas:
 		if dia == i[1]:
