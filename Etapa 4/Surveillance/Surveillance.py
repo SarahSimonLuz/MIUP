@@ -133,3 +133,9 @@ def arrayduplo(pontos):
             pontos2.append(pontos[i])
     return pontos2
 
+def solve(file_name):
+    pontos, size = matrizes(file_name)
+    pontos2 = arrayduplo(pontos)
+    areaponto = calcula_areaponto(pontos,pontos2,size) 
+    return calcula_pontofinal(pontos2, areaponto)
+
