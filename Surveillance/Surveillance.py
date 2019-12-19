@@ -9,6 +9,16 @@
 #pontos2=[[0,0],[1,0],[1,1],[0,1],[0,0],[1,0],[1,1],[0,1]]
 
 
+def recebecalcula(pontos,size):
+    import numpy as np
+    x = np.array(pontos[0])
+    y = np.array(pontos[1])
+    for i in range(int((size-1)/2)):
+        x = np.append(x, pontos[(i*2)+2])
+        y = np.append(y, pontos[(i*2)+3])
+    return PolyArea(x,y)
+
+
 
 
 
