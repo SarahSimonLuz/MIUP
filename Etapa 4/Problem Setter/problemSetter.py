@@ -13,6 +13,16 @@ def divisao(equipas): #dividir o input em equipas separadas
 		ret.append(aux)
 	return ret
 
+def verificar_data(dia,equipas): #ver se a equipa com o deadline+prox já está "preparada" para receber emails
+	if len(equipas)==0:
+		return 0
+	equipa = deadline_maisProximo(equipas)
+	iniciar = (equipa[2]+1)- equipa[0]
+	if iniciar == dia:
+		return 1
+	else:
+		return 0
+	
 def decrementar(equipas): #decrementa o numero de emails por mandar, e remove da lista
 	for i in equipas:
 		i[0]-=1
