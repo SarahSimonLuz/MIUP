@@ -36,6 +36,31 @@ def PolyArea(x,y):
     import numpy as np
     return 0.5*np.abs(np.dot(x,np.roll(y,1))-np.dot(y,np.roll(x,1)))
 
+def resolve_matriz(P1,P2,P3,P4):
+    import numpy as np
+    
+    x1,y1=P1
+    x2,y2=P2
+    x3,y3=P3
+    x4,y4=P4
+
+    X=x2-x1
+    Y=y2-y1
+    XX=-1*(x4-x3)
+    YY=-1*(y4-y3)
+    xr=x3-x1
+    yr=y3-y1
+    
+    A = np.array([[X,XX],[Y,YY]])
+    B = np.array([[xr],[yr]])
+    
+    if np.linalg.det(A)!=0:
+        #print(np.linalg.solve(A,B))
+        return np.linalg.solve(A,B)
+    if np.linalg.det(A)==0:
+        #print([[-1][-1]])
+        return [[-1][-1]]
+
 def verifica(x):
     if x[0]<0 or x[0]>1 or x[1]<0 or x[1]>1:
         return False
