@@ -31,6 +31,18 @@ def verificar_abertos(dia, equipas,abertos): #as equipas que é possivel mandar 
 			abertos.append(i)
 	return abertos
 
+
+def deadline_maisProximo(equipas): #ver qual o deadline mais proximo
+	atual = 31
+	equipa = []
+	if len(equipas) == 1:
+		return equipas[0]
+	for i in equipas:
+		if i[2] < atual: 	
+			atual = i[2]
+			equipa = i
+	return equipa
+
 def verificar_data(dia,equipas): #ver se a equipa com o deadline+prox já está "preparada" para receber emails
 	if len(equipas)==0:
 		return 0
